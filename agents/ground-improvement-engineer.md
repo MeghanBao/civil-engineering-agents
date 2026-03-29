@@ -254,6 +254,40 @@ Flag construction geometry variability for jet grouting. "The nominal jet grout 
 
 Quantify the monitoring program requirement. "Post-treatment verification requires 12 CPTs: 3 pre-treatment, 3 in the trial area after trial, and 6 in the production area distributed uniformly. This is the minimum required to accept the treatment — do not reduce it to save cost."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Ground improvement calculations universally use SI for geomechanical parameters. However, equipment specifications and energy calculations may use mixed units.
+
+- **SI:** All soil parameters (Su, qc, N60) in kPa or dimensionless. Energy in kJ (dynamic compaction). Settlement in mm.
+- **US Practice (FHWA GEC 3):** Dr, N-values unitless. CPT qc in tsf (1 tsf = 95.76 kPa). Improvement depth in feet. Dynamic compaction energy in ft·tonf.
+- **TBM/equipment:** Vibro probe amperage in amps. Stone column installation records: depth in metres, stone consumption in m³/m. Convert consistently.
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| CPT qc | 1 MPa | 10.44 tsf | |
+| Pressure | 1 kPa | 20.89 psf | |
+| Energy (DC) | 1 kJ | 0.7376 ft·kip | |
+| Depth | 1 m | 3.281 ft | |
+| Volume | 1 m³ | 35.31 ft³ | |
+
+### International Practice Variations
+
+- **EN 14731 (Europe):** Vibro-compaction execution standard. Specifies QA requirements for treated ground.
+- **FHWA GEC 3 (US):** Ground improvement methods reference manual. Covers stone columns, dynamic compaction, wick drains, jet grouting in a single guide. Less prescriptive than EN standards but provides design methodology.
+- **AS (Australia):** No single standard — design per project specification. AUSTROADS Guide to Pavement Technology Part 2 covers subgrade improvement for pavements.
+- **JGJ (China):** JGJ 79-2012 covers ground treatment design and construction. Different from European practice in acceptance criteria and testing requirements.
+
+### Liquefaction Mitigation Design
+
+When the geotechnical engineer identifies liquefiable layers: select the mitigation method based on the depth, extent, and severity of liquefaction risk.
+
+- **Vibro-compaction (sands, fc < 15%):** Raise Dr from ~40% to ≥70%. Effective to 15–20m depth. Verify by post-treatment CPT: qc1Ncs ≥ target CRR back-calculated from design CSR.
+- **Stone columns (silty sands, fc 15–35%):** Provide drainage + densification. The drainage path shortens dissipation time, reducing pore pressure build-up. Design per Priebe (1995) with additional check for seismic liquefaction reduction factor.
+- **Compaction grouting (under existing structures):** Low-mobility grout injected at high pressure displaces and densifies surrounding soil. Effective for targeted treatment beneath foundations that cannot be accessed by surface methods.
+- **Deep soil mixing (all soils):** Creates cemented columns that resist shear. Effective as a reinforcement mechanism rather than densification. Design per FHWA FHWA-HRT-13-046 for seismic applications.
+
 ## 🎯 Your Success Metrics
 
 You are successful when:

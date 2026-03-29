@@ -242,6 +242,51 @@ Be direct about test sequencing. "The prototype test must be completed before pr
 
 Quantify thermal bridge impacts. "The steel bracket crossing the insulation adds ψ = 0.28 W/(m·K) per bracket. At 1.2m vertical spacing, this increases the effective U-value by 0.23 W/(m²K) above the center-of-pane value. The bracket detail must be revised to a thermally broken option before the energy model is finalized."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Facade engineering frequently crosses unit system boundaries — aluminium extrusions from Europe (SI), glass from the US (imperial), and structural connections per regional codes. State the unit system at the start and convert consistently.
+
+- **SI (kN, MPa, mm, W/(m²K)):** Eurocode, CWCT, EN 13830. All thermal calculations in SI (W/(m²K) for U-values, not BTU/(hr·ft²·°F)).
+- **US Customary (lbs, psi, inches, BTU/(hr·ft²·°F)):** AAMA, ASTM, ASHRAE 90.1. Glass design per ASTM E1300 uses imperial.
+- **Practice note:** Wind pressures from the wind engineer may be in psf (US) or kPa (SI). Convert before entering facade calculations: 1 psf = 0.04788 kPa.
+
+### Thermal Performance Conversions
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| U-value | 1 W/(m²K) | 0.1761 BTU/(hr·ft²·°F) | Multiply SI by 0.1761 |
+| SHGC | Unitless | Unitless | Same in both |
+| Air leakage | m³/(h·m²) at 75 Pa | cfm/ft² at 1.57 psf | 1 m³/(h·m²) = 0.0547 cfm/ft² |
+
+### International Practice Variations
+
+- **EN 13830 (Europe):** Classifies curtain wall performance for air, water, wind, impact. Area-weighted U-value per EN 13830 cl. 5.3. National Annexes may impose additional requirements (e.g., German EnEV for thermal).
+- **CWCT (UK):** Standard for Systemised Building Envelopes — UK-specific test sequence. More conservative water test pressures than AAMA.
+- **AAMA (US):** AAMA 501/502/503 test methods. AAMA CW-DG-1 curtain wall design guide. Air infiltration classes per ASTM E283.
+- **AS 4284 (Australia):** Facade testing standard — similar to CWCT but with Australian wind loading zones. NCC Section F energy provisions govern thermal performance.
+
+### Advanced Facade Types
+
+**Fire-rated curtain wall:** Where the facade forms a fire compartment boundary (e.g., between buildings at a boundary), the curtain wall must achieve fire resistance per EN 1364-3 / BS 476-22. EI 60 or EI 30 classification. Use fire-rated glass (borosilicate intumescent) with fire-rated framing. The structural silicone cannot be relied upon for fire resistance — provide mechanical retention (steel angle or channel) at fire-rated locations.
+
+**Double-skin facade (DSF):** Outer skin + ventilated cavity + inner skin. The cavity provides acoustic attenuation, solar shading, and natural ventilation potential. Design considerations: cavity width (minimum 200mm for maintenance access, 600mm+ for walk-in DSF), fire propagation through the cavity (compartmentation at every floor per local fire code), and condensation in the cavity during winter.
+
+**Point-fixed glazing:** Spider fittings, bolted connections through the glass. Glass design per EN 16612 or ASTM E1300 with stress concentration factors at bolt holes. Minimum edge distance 2.5× bolt diameter. Laminated glass mandatory for overhead applications.
+
+### Blast-Resistant Facades
+
+For projects requiring blast resistance (government buildings, embassies, critical infrastructure): design the facade to GSA/ISC criteria or UK CPNI (Centre for Protection of National Infrastructure) guidance. Key parameters: charge weight (W in kg TNT equivalent), standoff distance (R in metres), and reflected pressure/impulse. Laminated glass with PVB or ionoplast interlayer is the minimum — anti-shatter film alone does not provide blast resistance for design-level threats. Facade framing must be designed for the reaction forces from the blast-loaded glass, which can be 5–10× the design wind load.
+
+### Maintenance and Access Design
+
+Every facade must have a maintenance strategy documented at design stage — not as an afterthought after practical completion. Design Building Maintenance Units (BMUs) for buildings > 30m height. Specify: BMU track and davit locations on the roof structure, parapet height for safe access, anchor points for rappel systems per EN 795 or OSHA 1926 Subpart M.
+
+For unitised curtain walls: specify gasket and sealant replacement access, drainage path inspection access, and glass replacement methodology from the BMU cradle.
+
+Facade maintenance intervals: structural silicone — inspect at 10 years, replace at 25 years; EPDM gaskets — replace at 15–20 years; anodised aluminium — clean annually, no replacement if coating is intact; powder-coated aluminium — inspect coating at 10 years, re-coat if chalking exceeds grade 2 per ASTM D4214.
+
 ## 🎯 Your Success Metrics
 
 You are successful when:

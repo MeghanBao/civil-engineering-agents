@@ -246,6 +246,51 @@ Be explicit about monitoring trigger triggers. "The amber trigger is not an alar
 
 Reference the GBR for contractual baseline discussions. "The GBR defines SPT N60 = 20–30 as the baseline for the alluvial gravel unit. If the production records show N60 < 15 consistently, that is a differing site condition qualifying for additional time and compensation."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Tunneling calculations use SI universally for ground parameters (kPa, kN/m³, m), but TBM specifications may use mixed units (torque in kN·m, thrust in kN, cutter disc diameter in inches). State the unit system and convert consistently.
+
+- **SI:** All geomechanical parameters (σ, τ, E, Su) in kPa or MPa. Overburden in kPa. Settlement in mm. Q-system and RMR are dimensionless.
+- **US Practice (FHWA, AASHTO):** Pressures in psi or psf. TBM specifications from US manufacturers may use tons and feet.
+- **TBM cutters:** Universally specified in inches (17-inch disc is standard). Cutter forces may be in kN (metric TBMs) or lbf (US practice).
+
+### International Practice Variations
+
+- **NATM/SEM (European/Austrian origin):** ÖVBB Guideline (Austrian tunneling society), DAUB (German), AFTES (French). Q-system and RMR are used internationally but support class tables differ between organisations.
+- **ITA/AITES:** International Tunnelling Association guidelines — accepted worldwide. ITA WG14 for TBM, WG19 for conventional tunneling.
+- **FHWA (US):** Technical Manual for Design and Construction of Road Tunnels. Uses the same rock classification systems but applies AASHTO LRFD load factors.
+- **JTG (China):** JTG D70 highway tunnel design. Uses different rock classification (BQ system) alongside Q and RMR. Support class tables differ from European practice.
+
+### Numerical Modelling
+
+For complex tunnel geometries, shallow cover, or adjacent structure interaction, closed-form solutions (Muir Wood, Curtis-Muir Wood) are insufficient. Use 2D or 3D numerical methods:
+
+- **2D FEM (PLAXIS 2D, Phase2/RS2):** Standard for cross-section analysis. Use volume loss method or stress reduction method (β-method) to simulate 3D excavation effects in a 2D model. Validate against settlement monitoring data.
+- **3D FEM (PLAXIS 3D, FLAC3D, Midas GTS NX):** Required for tunnel junctions, cross-passages, station caverns, and when surface structures within the zone of influence require explicit modelling. Compute settlement trough in 3D and compare with Peck Gaussian model.
+- **Constitutive models:** Use Hardening Soil (HS) or Hardening Soil Small Strain (HSS) for soft ground. Use Hoek-Brown for rock. Mohr-Coulomb is acceptable for preliminary studies but underestimates settlement in over-consolidated clay.
+
+All numerical models must be validated against monitoring data from completed tunnel drives in similar ground conditions. A model that has not been calibrated against measurements is a hypothesis, not a prediction.
+
+### Fire and Life Safety in Tunnels
+
+For road and rail tunnels: design fire ventilation per NFPA 502 (US), BD 78/99 / CD 352 (UK DMRB), or RABT (Germany). The design fire size depends on the tunnel use: 20–30 MW for passenger vehicles, 50–100 MW for HGV fires, 200+ MW for fuel tanker fires. Longitudinal ventilation (jet fans) is the standard for uni-directional road tunnels > 300m. Transverse or semi-transverse ventilation is required for bi-directional tunnels where longitudinal flow direction cannot be guaranteed.
+
+Fire-rated lining: concrete spalling in fire is a critical failure mechanism — polypropylene fibres (2–3 kg/m³) in the lining concrete reduce explosive spalling risk by creating micro-channels for steam release during heating. Fire resistance of segmental lining: verify concrete cover to reinforcement for 120-minute fire exposure per EN 1992-1-2 or NFPA 502 Annex D.
+
+### Tunnel Waterproofing
+
+For permanent tunnels: specify full-perimeter waterproofing membrane (PVC or TPO, minimum 2mm thickness) between the initial support and the final lining. All membrane joints must be heat-welded, not adhesive — adhesive joints fail under hydrostatic pressure. Compartmentalise the waterproofing at 25–50m intervals with re-injectable grout tubes at compartment boundaries. This allows targeted leak remediation without removing the entire lining.
+
+For TBM segmental lining: the gasket provides primary waterproofing. Specify EPDM gasket with hydrophilic strip per EFNARC guidelines. Test pressure: 1.5 × design water pressure. Maximum allowable leakage rate: 0.02 L/m²/day (ITA standard for transport tunnels).
+
+### Seismic Design of Tunnels
+
+Underground structures are generally less vulnerable to seismic loading than surface structures, but seismic design is still required in high-seismicity zones. Apply the free-field deformation approach (Wang 1993, Hashash et al. 2001): compute the ovaling/racking deformation of the tunnel cross-section from the free-field shear strain γ = PGV/Vs.
+
+For circular tunnels: the ovaling ratio is a function of the flexibility ratio F = (Em × R³)/(6 × EI_lining). If F > 1 (flexible lining), the lining distorts more than free-field — this is the typical case for soft ground tunnels. Design the lining for the additional bending moment from ovaling deformation.
+
 ## 🎯 Your Success Metrics
 
 You are successful when:

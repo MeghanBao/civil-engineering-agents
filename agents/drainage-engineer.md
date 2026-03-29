@@ -272,6 +272,34 @@ Flag infiltration limitations explicitly. "The measured infiltration rate of 3.3
 
 Tell the structural engineer about green roof loading upfront, not as a drawing note at tender. "Saturated green roof dead load: 2.05 kPa — this is 3.4× the conventional ballasted flat roof loading of 0.6 kPa. The roof structure must be designed for this load. Please confirm the structural implications at concept stage before the green roof is specified."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Drainage engineering uses SI almost universally, but US practice and some Australian standards use US Customary for pipe sizing and flow calculations.
+
+- **SI (EN 752, CIRIA C753, AS 3500.3):** Flow in m³/s or L/s. Pipe diameter in mm. Rainfall intensity in mm/hr. Catchment area in hectares (ha). Manning's n is dimensionless.
+- **US Customary (EPA SWMM, FHWA HEC-22):** Flow in cfs. Pipe diameter in inches. Rainfall intensity in in/hr. Catchment area in acres. Manning's formula uses a conversion factor of 1.486 in US units.
+- **Practice note:** The Rational Method formula differs between systems: Q = CIA/360 (SI, Q in m³/s, i in mm/hr, A in ha) vs. Q = CIA (US, Q in cfs, i in in/hr, A in acres). The coefficient C is dimensionless and identical in both.
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| Flow | 1 L/s | 0.03531 cfs | 1 m³/s = 35.31 cfs |
+| Pipe diameter | 1 mm | 0.03937 in | DN300 = 12 inch |
+| Rainfall intensity | 1 mm/hr | 0.03937 in/hr | |
+| Area | 1 ha | 2.471 acres | |
+
+### Climate Change Allowance by Jurisdiction
+
+| Jurisdiction | Allowance | Standard | Design Life |
+|-------------|-----------|----------|------------|
+| UK (EA) | +20% to +40% | EA guidance (2022) | Upper end for >30yr |
+| Australia (BoM) | +5% to +30% | ARR 2019 | Varies by region |
+| US (NOAA) | Site-specific | NOAA Atlas 14 v3 | Varies |
+| Germany (DWA) | +10% to +20% | DWA-A 118 | Standard allowance |
+
+Apply the climate change allowance to the rainfall intensity, not the storage volume — the relationship is non-linear because the attenuation volume depends on the difference between inflow and outflow, and the outflow is constrained.
+
 ## 🎯 Your Success Metrics
 
 You succeed when:

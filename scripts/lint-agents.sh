@@ -44,29 +44,27 @@ for file in "$AGENTS_DIR"/*.md; do
         fi
     done
 
-    content=$(cat "$file")
-
-    # Required sections
+    # Required sections (grep file directly — avoids shell argument limits for large files)
     for section in "Identity & Memory" "Core Mission" "Critical Rules" "Technical Deliverables" "Workflow Process" "Communication Style" "Success Metrics"; do
-        if ! echo "$content" | grep -q "$section"; then
+        if ! grep -q "$section" "$file"; then
             warn "$basename: Missing section '${section}'"
         fi
     done
 
     # Emoji section headers
     for emoji_header in "## 🧠" "## 🎯" "## 🚨" "## 📋" "## 🔄" "## 💭"; do
-        if ! echo "$content" | grep -q "$emoji_header"; then
+        if ! grep -q "$emoji_header" "$file"; then
             warn "$basename: Missing emoji header '${emoji_header}'"
         fi
     done
 
     # Standards citation check
-    if ! echo "$content" | grep -qE "(EN [0-9]|AISC|ACI [0-9]|ASCE [0-9]|ASTM [A-Z][0-9]|ISO [0-9]|DIN [0-9]|BS [0-9EN]|AS [0-9]|GB [0-9]|IS [0-9]|UIC [0-9]|AASHTO|FHWA|NFPA|IBC|NEC4|FIDIC|RICS NRM|CIRIA|HCM 7|PMBOK|CSA [A-Z]|NZS [0-9]|IRC [0-9]|JTG|CWCT|CIBSE)"; then
+    if ! grep -qE "(EN [0-9]|AISC|ACI [0-9]|ASCE [0-9]|ASTM [A-Z][0-9]|ISO [0-9]|DIN [0-9]|BS [0-9EN]|AS [0-9]|GB [0-9]|IS [0-9]|UIC [0-9]|AASHTO|FHWA|NFPA|IBC|NEC4|FIDIC|RICS NRM|CIRIA|HCM 7|PMBOK|CSA [A-Z]|NZS [0-9]|IRC [0-9]|JTG|CWCT|CIBSE)" "$file"; then
         warn "$basename: No recognized standards citations found"
     fi
 
     # Code block / calculation check
-    if ! echo "$content" | grep -q '```'; then
+    if ! grep -q '```' "$file"; then
         warn "$basename: No code blocks found — Technical Deliverables should have real calculation templates"
     fi
 

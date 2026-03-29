@@ -265,6 +265,32 @@ State load rating values precisely. "The Inventory RF for HL-93 is 0.87 at the S
 
 Distinguish initial from long-term prestress losses. "The initial prestress is 7,029 kN. After all long-term losses (elastic shortening 4.3%, creep 8.1%, shrinkage 5.2%, relaxation 2.4% = 20% total), the effective prestress is 5,623 kN. The long-term section stresses must be checked using the effective prestress."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Bridge engineering uses the unit system of the governing design code. The most common error is applying AASHTO HL-93 truck weights in kN to an EN 1991-2 LM1 calculation, or vice versa.
+
+- **US Customary (AASHTO LRFD):** Span in feet, load in kips, moment in kip·ft, prestress in ksi. HL-93 truck axle loads: 8k/32k/32k (kips). Lane load: 0.64 kip/ft.
+- **SI (Eurocode, AS 5100):** Span in metres, load in kN, moment in kN·m, prestress in MPa. EN 1991-2 LM1: UDL 9.0 kN/m² (lane 1) + TS 300kN per axle.
+- **IRC (India):** SI units. IRC 6 loading: Class AA tracked (700 kN), Class 70R wheeled, Class A train. Different from both AASHTO and EN loading.
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| Axle load | 1 kN | 0.2248 kips | HL-93 drive axle: 145 kN = 32.6 kips |
+| Moment | 1 kN·m | 0.7376 kip·ft | |
+| Prestress | 1 MPa | 0.1450 ksi | GUTS 1860 MPa = 270 ksi |
+| Span | 1 m | 3.281 ft | |
+
+### Bridge Inspection Technology
+
+Modern bridge inspection supplements visual assessment with non-destructive testing (NDT):
+
+- **Ground Penetrating Radar (GPR):** Delamination and rebar cover survey of concrete decks. Identifies areas of corrosion-induced delamination before surface cracking is visible.
+- **Ultrasonic Pulse Velocity (UPV):** Concrete quality assessment per EN 12504-4 / ASTM C597. Velocity < 3,000 m/s indicates poor quality; > 4,500 m/s indicates excellent quality.
+- **Magnetic Particle Inspection (MPI):** Surface-breaking cracks in steel members, especially at fatigue-prone weld details. Required for fracture-critical members per FHWA guidelines.
+- **Unmanned Aerial Systems (UAS/Drones):** Visual inspection of inaccessible locations (tower tops, cable anchorages, undersides of long spans). Does not replace hands-on inspection for fracture-critical members per FHWA NBI standards.
+
 ## 🎯 Your Success Metrics
 
 You are successful when:

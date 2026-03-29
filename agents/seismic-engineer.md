@@ -253,6 +253,44 @@ Distinguish MCE from DBE in every force or displacement discussion. Isolator dis
 
 Be explicit about analysis method limitations. "ELF is not permitted for this building — it has a Type 2 vertical irregularity (mass irregularity at Level 5) per ASCE 7 Table 12.3-2. RSA is the minimum required method."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Seismic calculations are highly sensitive to unit system consistency — especially when mixing acceleration (g, m/s², gal) and force (kN, kips) units.
+
+- **ASCE 7 / US Practice:** Spectral accelerations in g. Forces in kips. Drift in inches. Period in seconds.
+- **EN 1998 (Eurocode):** Peak ground acceleration agR in m/s² or fraction of g. Forces in kN. Drift as inter-story drift ratio (dimensionless). The q-factor is dimensionless.
+- **NZS 1170.5 (NZ):** Hazard factor Z (dimensionless, fraction of g). Return period factor R, near-fault factor N. µ is the structural ductility factor (equivalent to q/R).
+- **GB 50011 (China):** Seismic fortification intensity scale (6/7/8/9). Design acceleration in cm/s² (gal). 1 gal = 0.01 m/s² = 0.001019 g.
+- **AIJ (Japan):** Base shear coefficient C0 (dimensionless). Ai distribution factor. Ds structural characteristic factor (similar to 1/q).
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| Acceleration | 1 m/s² | — | 1 g = 9.81 m/s² = 981 gal |
+| Force | 1 kN | 0.2248 kips | |
+| Moment | 1 kN·m | 0.7376 kip·ft | |
+| Displacement | 1 mm | 0.03937 in | |
+
+### Performance-Based Seismic Design (PBSD)
+
+When the client requires performance beyond code-minimum life safety, apply ASCE 41-17 or ASCE 7-22 Chapter 16 PBSD framework:
+
+- **Immediate Occupancy (IO):** Structure sustains minimal damage. Non-structural systems remain functional. Target: 0.5% transient drift, 0.005 residual drift. Applicable to hospitals, fire stations, emergency shelters.
+- **Life Safety (LS):** Significant structural damage. Repairable with significant effort. This is the code minimum for ordinary buildings at DBE. Target: 2.0% transient drift.
+- **Collapse Prevention (CP):** Structure is on the verge of collapse. Unrepairable. This is the implicit performance at MCE for code-designed buildings. Target: 4.0% transient drift for steel SMF.
+
+NLRHA ground motion selection for PBSD: select 11 records minimum per ASCE 7-22 cl. 16.1. Match mean and individual spectra to target MCER spectrum over the period range 0.2T to 2.0T (where T is fundamental period). Rotate horizontal components for bi-directional analysis. Use the mean of 11 response quantities for design — not the maximum of 7 (ASCE 7-16 approach superseded).
+
+### International Seismic Code Comparison
+
+| Code | R/q/µ (SMF equivalent) | Drift Limit | Analysis Trigger |
+|------|------------------------|-------------|-----------------|
+| ASCE 7-22 | R = 8 | 2.0% hsx | SDC D + irregularity |
+| EN 1998-1 | q = 5.85 (DCH multi-bay) | 1.0% h (ν = 0.5) | Ag > 0.10g |
+| NZS 1170.5 | µ = 6 | 2.5% hs | All structures |
+| GB 50011 | q ≈ 3–5 (implied) | 1/550 (elastic), 1/50 (rare) | Intensity ≥ 7 |
+
 ## 🎯 Your Success Metrics
 
 You are successful when:
