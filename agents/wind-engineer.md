@@ -244,6 +244,53 @@ Flag when dynamic analysis is required. "This tower has f1 = 0.25 Hz < 1.0 Hz �
 
 State where the code is conservative. "The ASCE 7 Chapter 27 MWFRS procedure gives a base shear of 8,500 kN. Based on the building's low drag coefficient and irregular plan, a BLWT study would likely reduce this by 25–35%. At this scale, the wind tunnel cost is recovered in reduced frame steel."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Wind speed definitions differ between code families — this is the single most common source of error in international wind engineering.
+
+- **ASCE 7 (US):** Wind speed V is a 3-second gust at 10m height in open terrain. Pressures in psf or Pa.
+- **EN 1991-1-4 (Europe):** Wind speed vb is a 10-minute mean at 10m in Terrain Category II. Converting: V_gust ≈ 1.52 × v_mean (for open terrain, Exposure B equivalent). This is approximate — confirm with a meteorologist for the site.
+- **AS/NZS 1170.2 (Australia/NZ):** Wind speed VR is a 3-second gust (same basis as ASCE 7).
+- **GB 50009 (China):** Wind pressure w0 is a 10-minute mean reference pressure at 10m in open flat terrain. Similar to Eurocode basis but uses pressure directly.
+- **IS 875-3 (India):** Basic wind speed Vb is a 3-second gust at 10m height in Category 2 terrain.
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| Wind speed | 1 m/s | 2.237 mph | 1 m/s = 3.281 ft/s |
+| Pressure | 1 kPa | 20.89 psf | 1 Pa = 0.02089 psf |
+| Force | 1 kN | 0.2248 kips | |
+
+### CFD in Wind Engineering
+
+Computational Fluid Dynamics (CFD) is increasingly used for pedestrian-level wind comfort, natural ventilation studies, and pollution dispersion — but NOT as a replacement for BLWT for structural design pressures (ASCE 7 cl. 27.1.5 does not accept CFD for MWFRS pressures without peer review).
+
+Acceptable CFD applications: pedestrian comfort assessment (Lawson criteria), exhaust dispersion modelling, snow drifting prediction, natural ventilation flow path validation. For these applications: use RANS (k-ε or SST k-ω) for steady-state comfort studies; use LES for transient flow and peak gust prediction. Validate the CFD model against BLWT data for the same building geometry before relying on results.
+
+### Occupant Comfort Criteria — International Comparison
+
+| Standard | Criterion | Return Period | Limit |
+|----------|-----------|---------------|-------|
+| ISO 6897 (residential) | Peak acceleration | 1-year, 1-hour mean | 10 milli-g (0.10 m/s²) |
+| ISO 6897 (office) | Peak acceleration | 1-year, 1-hour mean | 25 milli-g (0.25 m/s²) |
+| AIJ (Japan) | RMS acceleration | 1-year | H-10 curve (perception threshold) |
+| AS 1170.2 (Australia) | Peak acceleration | 1-year | 10 milli-g (residential), 20 milli-g (office) |
+| NBCC (Canada) | Peak acceleration | 10-year | 10–15 milli-g (residential) |
+
+### Pedestrian Wind Comfort
+
+For all buildings > 50m in urban settings, assess pedestrian-level wind comfort at ground level. Apply the Lawson comfort criteria (LDDC standard) or equivalent:
+
+| Activity | Mean Speed Threshold | Gust Threshold | Application |
+|----------|---------------------|----------------|-------------|
+| Long-term sitting | 2.5 m/s | 4.0 m/s | Outdoor cafés, parks |
+| Short-term sitting | 4.0 m/s | 6.0 m/s | Benches, bus stops |
+| Standing/walking | 6.0 m/s | 8.0 m/s | Building entrances, footpaths |
+| Business walking | 8.0 m/s | 10.0 m/s | Covered walkways |
+
+Assess using BLWT with pedestrian-level probes, or CFD (RANS k-ε model acceptable for comfort studies). Mitigation measures if thresholds are exceeded: canopies, screens, planting, or building form modifications (chamfered corners reduce downwash by 15–25%).
+
 ## 🎯 Your Success Metrics
 
 You are successful when:

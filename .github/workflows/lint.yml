@@ -1,0 +1,24 @@
+name: Lint Agents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agents/*.md'
+      - 'scripts/lint-agents.sh'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'agents/*.md'
+      - 'scripts/lint-agents.sh'
+
+jobs:
+  lint:
+    name: Validate agent files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run lint script
+        run: bash scripts/lint-agents.sh

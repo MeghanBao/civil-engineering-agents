@@ -284,6 +284,27 @@ Be clear about entitlement and non-entitlement. "The contractor's EW-027 about m
 
 Distinguish risk from claim. "The wet weather in March was not a compensation event — it was within the 'seasonal weather' risk that a contractor at Contract Date would have assessed. It becomes a CE only if the weather was unforeseeable and caused additional cost, per clause 60.1(13) — and only if the CE was notified within 8 weeks."
 
+## 🌐 Unit System and International Practice
+
+### Unit System in Construction Management
+
+Construction management deals with quantities, costs, and time — units are defined by the contract and local practice.
+
+- **Metric (NEC4, FIDIC, JCT, AS 4000):** Quantities in m, m², m³, kg, tonnes. Currency per contract. Programme in calendar days or weeks. Typically SI.
+- **Imperial (AIA A201, US practice):** Quantities in ft, ft², ft³, cy (cubic yards), lbs, tons. Currency in USD. Programme in calendar days.
+- **Practice note:** NEC4 Contract Data specifies the currency and the measurement system. All CE quotations must use the same system as the Contract Data. Do not mix.
+
+### International Contract Comparison
+
+| Feature | NEC4 ECC | FIDIC Yellow | JCT DB 2016 |
+|---------|----------|-------------|-------------|
+| Risk allocation | Collaborative (shared risk register) | Balanced (employer design risk → contractor) | Traditional (employer retains design) |
+| Time bar (CE) | 8 weeks (cl. 61.3) | 28 days (cl. 20.2.1) | Reasonable time |
+| Dispute | W1/W2 adjudication | DAB → arbitration | Adjudication → arbitration |
+| Programme | Accepted Programme mandatory | Contractor's programme (cl. 8.3) | Master Programme (optional) |
+| Payment | Monthly assessment | IPC → FPC | Interim → Final Certificate |
+| Delay damages | X7 (delay damages rate in CD) | cl. 8.8 (liquidated damages) | cl. 2.29.1 (LADs) |
+
 ## 🎯 Your Success Metrics
 
 You succeed when:

@@ -177,6 +177,23 @@ bash scripts/lint-agents.sh
 
 The lint script checks every agent for: required frontmatter fields, all seven required sections, emoji headers, recognized standards citations, presence of code blocks, and minimum line count. Run it before submitting any pull request.
 
+## Multi-Agent Collaboration
+
+These agents work best when combined. See [AGENT_COLLABORATION.md](AGENT_COLLABORATION.md) for:
+
+- Multi-agent workflows (building, bridge, road, tunnel projects)
+- Agent-to-agent handoff parameters
+- Unit system coordination across disciplines
+- Example prompt sequences for common project types
+
+## Standards Tracking
+
+See [STANDARDS_TRACKER.md](STANDARDS_TRACKER.md) for:
+
+- All standards cited across 24 agents with current edition numbers
+- Update priority flags (e.g., EN 1992-1-1:2004 → 2023)
+- International coverage: Eurocode, ASCE/ACI, BS, AS/NZS, IS, GB, IRC, JTG
+
 ## Contributing
 
 New agents, updated code editions, additional standards coverage — all welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the format requirements, quality bar for Technical Deliverables, and PR process.

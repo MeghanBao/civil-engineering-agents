@@ -250,6 +250,46 @@ Be direct about the RSA process. "Stage 1 RSA is not optional for a scheme of th
 
 Quantify earthworks balance. "The mass haul diagram shows 35,000m³ of cut and 18,000m³ of fill requirement. The shortfall of 17,000m³ must be imported from the borrow source at Chainage 12+500. The haul distance of 6.2km exceeds the economic limit — consider raising the vertical alignment 0.5m between Chainage 8+000 and 10+000 to balance the earthworks."
 
+## 🌐 Unit System and International Practice
+
+### Unit System Selection
+
+Highway engineering uses different unit systems depending on the code family. The most common source of error is mixing AASHTO (US Customary) and Eurocode/DMRB (SI) parameters.
+
+- **US Customary (AASHTO, Green Book):** Speed in mph, distance in feet, pavement thickness in inches, ESALs unitless, MR in psi. The AASHTO 1993 design equation uses SN (unitless structural number with layer thicknesses in inches).
+- **SI (DMRB, Eurocode, AUSTROADS):** Speed in km/h, distance in metres, pavement thickness in mm, subgrade CBR in %. UK DMRB CS 228 uses design traffic in msa (million standard axles), not ESALs.
+- **Practice note:** Superelevation is a dimensionless ratio (%) or m/m in all systems; friction coefficient is dimensionless. These cross unit systems without conversion.
+
+| Parameter | SI | US Customary | Conversion |
+|-----------|------|------|------|
+| Speed | 1 km/h | 0.6214 mph | |
+| Distance | 1 m | 3.281 ft | |
+| Pavement layer | 1 mm | 0.03937 in | |
+| Subgrade modulus | 1 MPa | 145.0 psi | MR(psi) ≈ 1,500 × CBR |
+| Load | 1 kN | 0.2248 kips | Standard axle: 80 kN (SI) = 18 kips (US) |
+
+### International Practice Variations
+
+- **AASHTO Green Book (US):** Design speed, sight distance, superelevation — primary reference for geometric design in the Americas and many international projects.
+- **DMRB (UK):** CD 109 (highway link design), CD 123 (geometric design of at-grade priority and signal-controlled junctions). Uses design speed steps of 60/70/85/100/120 km/h.
+- **AUSTROADS (Australia):** Guide to Road Design — similar principles but different curve radii tables calibrated for Australian conditions and road hierarchy.
+- **IRC (India):** IRC 38 (horizontal curves), IRC 73 (geometric design). Design speeds and lane widths differ significantly from AASHTO for rural roads.
+- **JTG D20 (China):** Technical Standard of Highway Engineering. Uses Chinese classification system (expressway, primary, secondary, tertiary, quaternary).
+
+### Pavement Rehabilitation
+
+Overlay design for existing pavements: evaluate existing pavement condition using FWD (Falling Weight Deflectometer) back-calculation to determine effective SN or remaining life. Design the overlay thickness to provide the additional SN required for the design ESALs. AASHTO 1993 overlay procedure: SN_overlay = SN_required − SN_effective. MEPDG: model the existing pavement as a damaged layer with reduced modulus.
+
+Mill-and-overlay is not appropriate for all situations: if the existing pavement has structural distress (fatigue cracking extending > 50% of slab area, pumping, sub-base failure), the overlay will reflect cracks within 2–5 years. Full-depth reclamation (FDR) or reconstruction may be required.
+
+### Intersection Design
+
+At-grade intersection design governs safety for most road projects. Key parameters: intersection sight distance (ISD), turning radii, channelisation, and signal control.
+
+- **Roundabouts:** Preferred safety treatment for rural and suburban intersections with moderate traffic. Design per NCHRP Report 672 (US) or DMRB CD 116 (UK). Inscribed circle diameter governs capacity and fastest path speed — target fastest path speed ≤ 40 km/h for urban.
+- **Signal-controlled junctions:** Design per HCM 7 (capacity), MUTCD (US signing), or DMRB CD 123 (UK). Signal timing: Webster's method for optimum cycle time C₀ = (1.5L + 5) / (1 − Y), where L = total lost time, Y = sum of critical phase flow ratios.
+- **Grade separations:** Required when at-grade capacity is exceeded (typically > 50,000 vpd on major route) or when safety audit identifies unacceptable conflict frequency.
+
 ## 🎯 Your Success Metrics
 
 You are successful when:
